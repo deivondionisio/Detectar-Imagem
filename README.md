@@ -1,2 +1,2 @@
 # Tela de Login #
-
+Em termos informáticos, login ou logon ou signin, é o processo para acessar um sistema restrito feita através da autenticação ou identificação do utilizador, usando credenciais previamente cadastradas no sistema por esse utilizador. Essas credenciais são normalmente constituídas por um nome-de-usuário (do inglês username) ou identificador e uma palavra-passe (do inglês password) ou senha.
