@@ -5,118 +5,95 @@
 }
 
 body {
-	font-family: sans-serif;
-	background: #34495e;
+	background: #1e272e;
+	height: 100vh;
 }
 
-.login-box {
-	width: 280px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: #fff;
-}
-
-.login-box h2 {
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 2.5rem;
-	margin-bottom: 40px;
-}
-
-.user-box {
-	position: relative;
-}
-
-.user-box input {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 1rem;
-	color: #fff;
-	margin-bottom: 30px;
-	border: none;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	background: transparent;
-}
-
-.user-box label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 10px 0;
-	font-size: 1rem;
-	color: #fff;
-	pointer-events: none;
-	transition: 0.5s;
-}
-
-.user-box input:focus ~ label,
-.user-box input:valid ~ label {
-	top: -20px;
-	left: 0;
-	color: #03a9f4;
-	font-size: 0.8rem;
-}
-
-.user-box a {
-	display: inline-block;
-	background: #03a9f4;
-	border: none;
-	border-radius: 30px;
-	padding: 12px 40px;
-	color: #fff;
-	font-size: 1rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	margin-top: 40px;
-	position: relative;
-	overflow: hidden;
-	transition: 0.5s;
-}
-
-.user-box a:hover {
-	background: transparent;
-	color: #03a9f4;
-}
-
-.user-box a span {
-	position: absolute;
-	display: block;
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
-	width: 100%;
-	top: 0;
-	left: -100%;
-	background: #03a9f4;
-	transition: 0.5s;
 }
 
-.user-box a:hover span {
-	left: 0;
+.login {
+	background: #fff;
+	padding: 50px;
+	border-radius: 10px;
+	text-align: center;
+	animation: fadeInDown 1s ease;
 }
 
-.user-box a span:nth-child(2) {
-	top: -100%;
-	left: 0;
+h1 {
+	font-size: 36px;
+	margin-bottom: 30px;
 }
 
-.user-box a:hover span:nth-child(2) {
-	top: 0;
+form {
+	display: flex;
+	flex-direction: column;
 }
 
-.user-box a span:nth-child(3) {
-	top: 100%;
-	left: 0;
+input[type="text"],
+input[type="password"] {
+	background: #ecf0f1;
+	border: none;
+	border-radius: 5px;
+	padding: 12px 15px;
+	margin-bottom: 20px;
 }
 
-.user-box a:hover span:nth-child(3) {
-	top: 0;
+button.btn {
+	background: #2ecc71;
+	border: none;
+	border-radius: 5px;
+	padding: 12px 15px;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-.user-box a span:nth-child(4) {
-	bottom: -100%;
-	left: 0;
+button.btn:hover {
+	background: #27ae60;
 }
 
-.user-box
+@media screen and (max-width: 768px) {
+	.login {
+		padding: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.login {
+		padding: 20px;
+	}
+
+	h1 {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		padding: 10px 12px;
+		margin-bottom: 10px;
+	}
+
+	button.btn {
+		font-size: 16px;
+		padding: 10px 12px;
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
