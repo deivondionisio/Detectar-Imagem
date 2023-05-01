@@ -97,3 +97,84 @@ button.btn:hover {
 		opacity: 1;
 	}
 }
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #333;
+}
+
+.menu ul {
+	list-style: none;
+	display: flex;
+}
+
+.menu li {
+	margin-left: 20px;
+}
+
+.menu a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.hamburguer {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+	cursor: pointer;
+}
+
+.linha {
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	transition: transform 0.2s ease-in-out;
+}
+
+.aberto .linha:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.aberto .linha:nth-child(2) {
+	opacity: 0;
+}
+
+.aberto .linha:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+	.menu ul {
+		display: none;
+	}
+
+	.hamburguer {
+		display: flex;
+	}
+
+	.aberto ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #333;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+
+	.aberto li {
+		margin: 10px 0;
+	}
+
+	.aberto a {
+		font-size: 24px;
+	}
+}
