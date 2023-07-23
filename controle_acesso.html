@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form action="login.php" method="post">
+    <input type="text" name="matricula" placeholder="Matrícula">
+    <input type="password" name="senha" placeholder="Senha">
+    <input type="submit" value="Login">
+    <input type="text" name="search" placeholder="Search">
+  </form>
+  <script>
+    function search() {
+      var matricula = document.getElementById("search").value;
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "search.php?matricula=" + matricula);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          var alunos = JSON.parse(xhr.responseText);
+          for (var i = 0; i < alunos.length; i++) {
+            alert(alunos[i].nome + " " + alunos[i].matricula);
+          }
+        } else {
+          alert("Erro ao buscar o aluno");
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
+
